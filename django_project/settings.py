@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '-)i_5izh%++#nkssbs8bf^risng)r4
 #DEBUG = False
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['gis-dojo-blog.herokuapp.com','127.0.0.1']
 
 
 # Application definition
