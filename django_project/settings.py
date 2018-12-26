@@ -20,10 +20,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '-)i_5izh%++#nkssbs8bf^risng)r4a*gf%zcf5)w**76=r&(4'
-
+#SECRET_KEY = '-)i_5izh%++#nkssbs8bf^risng)r4a*gf%zcf5)w**76=r&(4'
+import os
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '-)i_5izh%++#nkssbs8bf^risng)r4a*gf%zcf5)w**76=r&(4')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = False
+DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
 ALLOWED_HOSTS = []
 
@@ -157,3 +159,10 @@ STATIC_URL = '/static/'
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+SECURE_CONTENT_TYPE_NOSNIFF= True
+SECURE_BROWSER_XSS_FILTER =True
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE =True
+CSRF_COOKIE_SECURE  = True
+X_FRAME_OPTIONS = 'DENY'
