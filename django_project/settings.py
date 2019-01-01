@@ -34,7 +34,7 @@ ALLOWED_HOSTS = ['gis-dojo-blog.herokuapp.com','127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
-    'disqus',
+
     'crispy_forms',
     'events.apps.EventsConfig',
     'users.apps.UsersConfig',
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
 ]
 
 MIDDLEWARE = [
@@ -162,10 +163,11 @@ STATIC_URL = '/static/'
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-#SECURE_CONTENT_TYPE_NOSNIFF= True
-#SECURE_BROWSER_XSS_FILTER =True
-#SECURE_SSL_REDIRECT = True
-#SESSION_COOKIE_SECURE =True
-#CSRF_COOKIE_SECURE  = True
-#X_FRAME_OPTIONS = 'DENY'
+SECURE_CONTENT_TYPE_NOSNIFF= True
+SECURE_BROWSER_XSS_FILTER =True
+SECURE_SSL_REDIRECT = False
+SESSION_COOKIE_SECURE =True
+CSRF_COOKIE_SECURE  = True
+X_FRAME_OPTIONS = 'DENY'
+
 

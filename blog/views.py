@@ -74,7 +74,11 @@ class PostDeleteView(LoginRequiredMixin,UserPassesTestMixin,DeleteView):
         return False
 
 def about(request):
-    return render(request, 'blog/about.html', {'title': 'About'})
+    context = {
+        'posts': Post.objects.all()
+    }
+
+    return render(request, 'blog/about.html', context)
 
 def contact_us (request):
     if request.method =='GET':

@@ -1,4 +1,12 @@
 {% extends "blog/base.html" %}
+
 {% block content %}
-    <h1>About Page</h1>
+    <h1>Archive</h1>
+    <div class="content-section">
+        {% for post in posts %}
+        <li>{{ post.date_posted|date:"F d, Y" }}----<a href="{% url 'post-detail' post.id %}">{{ post.title }}</a></li>
+        <br>
+
+        {% endfor %}
+    </div>
 {% endblock content %}
