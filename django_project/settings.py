@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
+
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -33,6 +34,7 @@ ALLOWED_HOSTS = ['gis-dojo-blog.herokuapp.com','127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'disqus',
     'crispy_forms',
     'events.apps.EventsConfig',
     'users.apps.UsersConfig',
@@ -160,9 +162,10 @@ STATIC_URL = '/static/'
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-SECURE_CONTENT_TYPE_NOSNIFF= True
-SECURE_BROWSER_XSS_FILTER =True
-SECURE_SSL_REDIRECT = True
-SESSION_COOKIE_SECURE =True
-CSRF_COOKIE_SECURE  = True
-X_FRAME_OPTIONS = 'DENY'
+#SECURE_CONTENT_TYPE_NOSNIFF= True
+#SECURE_BROWSER_XSS_FILTER =True
+#SECURE_SSL_REDIRECT = True
+#SESSION_COOKIE_SECURE =True
+#CSRF_COOKIE_SECURE  = True
+#X_FRAME_OPTIONS = 'DENY'
+
